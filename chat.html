@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+       
+        li{
+            width: 100px;
+           
+        }
+        .gridbox {
+            position: fixed;
+            border: 2px solid black;
+            box-shadow: 0px 0px 10px gray;
+            width: 400px;
+            height: 300px;
+            text-align: center;
+            top:100px;
+            background-color: khaki;
+
+        }
+
+
+        .gridbox1 {
+            position: fixed;
+            border: 2px solid black;
+            box-shadow: 0px 0px 10px gray;
+            width: 400px;
+            height: 300px;
+            text-align: center;
+            top:100px;
+            right: 100px;
+            background-color: khaki;
+
+        }
+        .mychat{
+            color: blue;
+            position: relative;
+            padding-left: 400px;
+            
+        }
+        
+    </style>
+    <script>
+        function dumm() {
+
+            str1 = document.getElementById("id001").value;
+            str2 = document.getElementById("id002").value;
+            element= document.createElement("p");
+            if(str1 !=  " "){
+                text1=document.createTextNode(str1);
+                element.appendChild(text1);
+                mydiv=document.getElementById("demopara");
+                mydiv.appendChild(element);
+                document.getElementById("id001").value=" ";
+                element.style.color="red";
+
+            }
+            else if(str2 !=  " "){
+                text2=document.createTextNode(str2);
+                element.appendChild(text2);
+                mydiv=document.getElementById("demopara");
+                mydiv.appendChild(element);
+                document.getElementById("id002").value=" ";
+                element.className="mychat"
+                // element.style.color="blue";
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+   
+    <div class="gridbox">
+       
+       
+       Type Here <input type="text"
+        style="border:none; height: 40px ;border-radius: 5px; top:130px; "
+        id="id001">
+        <button type="button" style="background-color: cornflowerblue; width:100px;height: 30px; border-radius: 10px ; margin-top:130px;"
+            onclick="dumm()">Send</button>
+        <div  style="font-size: 170px;"></div>
+    </div>
+
+
+    
+    <div class="gridbox1">
+     
+     
+        Type Here <input type="text"
+          style="border:none; height: 40px ;border-radius: 5px; top:130px; "
+          id="id002">
+      <button type="button" style="background-color: cornflowerblue; width:100px;height: 30px; border-radius: 10px; margin-top:130px;"
+          onclick="dumm()">Send</button>
+  
+  </div>
+  <table id="demopara" style="font-size:30px;position:absolute;background-color:rgb(195, 199, 200);border:2px solid black ;width:500px ;height:500px ;border-collapse: collapse;left:460px">
+    <th></th>
+    <th></th>
+    <th></th>
+    
+  </table>
+</body>
+
+</html>
